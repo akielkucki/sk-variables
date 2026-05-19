@@ -63,7 +63,7 @@ export function Hero({downloadUrl}: HeroProps) {
                             href={downloadUrl}
                             className="group inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-emerald-400 px-5 text-sm font-medium text-emerald-950 shadow-[0_0_0_1px_rgba(52,211,153,0.4),0_8px_30px_-4px_rgba(52,211,153,0.4)] transition hover:bg-emerald-300"
                         >
-                            Install for free
+                            {demoState === "input" ? "Install now" : "Install for free"}
                             <span aria-hidden className="transition group-hover:translate-x-0.5">
                 →
               </span>
