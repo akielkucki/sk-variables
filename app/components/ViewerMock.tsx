@@ -3,22 +3,25 @@ import { LockIcon, SearchIcon } from "./icons";
 export function ViewerMock() {
   return (
     <div className="relative overflow-hidden rounded-xl border border-white/10 bg-[#0b0d0f] shadow-2xl shadow-black/60 ring-1 ring-white/5">
-      <div className="flex items-center gap-2 border-b border-white/5 bg-[#0a0c0e] px-3 py-2.5">
-        <span className="h-2.5 w-2.5 rounded-full bg-red-500/70" />
-        <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/70" />
-        <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/70" />
-        <div className="ml-3 flex items-center gap-2 rounded-md border border-white/5 bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-zinc-400">
+      <div className="flex items-center gap-1.5 border-b border-white/5 bg-[#0a0c0e] px-2.5 py-2 sm:gap-2 sm:px-3 sm:py-2.5">
+        <span className="h-2 w-2 rounded-full bg-red-500/70 sm:h-2.5 sm:w-2.5" />
+        <span className="h-2 w-2 rounded-full bg-yellow-500/70 sm:h-2.5 sm:w-2.5" />
+        <span className="h-2 w-2 rounded-full bg-emerald-500/70 sm:h-2.5 sm:w-2.5" />
+        <div className="ml-2 flex min-w-0 flex-1 items-center gap-2 rounded-md border border-white/5 bg-white/[0.03] px-2 py-0.5 font-mono text-[10px] text-zinc-400 sm:ml-3 sm:flex-none sm:px-2.5 sm:py-1 sm:text-[11px]">
           <LockIcon />
-          dashboard.skript-variables.com / hypixel-dev
+          <span className="truncate">
+            <span className="hidden sm:inline">dashboard.skript-variables.com / </span>
+            hypixel-dev
+          </span>
         </div>
-        <div className="ml-auto flex items-center gap-1.5 font-mono text-[10px] text-zinc-500">
+        <div className="ml-auto flex shrink-0 items-center gap-1.5 font-mono text-[10px] text-zinc-500">
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 pulse-dot" />
           live
         </div>
       </div>
 
-      <div className="grid grid-cols-[140px_1fr] text-[12.5px]">
-        <aside className="border-r border-white/5 bg-[#0a0c0e]/60 py-3 font-mono text-[11px]">
+      <div className="grid grid-cols-[96px_1fr] text-[11px] sm:grid-cols-[140px_1fr] sm:text-[12.5px]">
+        <aside className="border-r border-white/5 bg-[#0a0c0e]/60 py-2.5 font-mono text-[10px] sm:py-3 sm:text-[11px]">
           <SidebarSection label="Namespaces" />
           <SidebarItem dot="bg-emerald-400" label="player" badge="8,412" active />
           <SidebarItem dot="bg-cyan-400" label="economy" badge="1,204" />
@@ -31,19 +34,19 @@ export function ViewerMock() {
           <SidebarItem label="audit log" />
         </aside>
 
-        <div className="bg-[#0b0d0f]">
-          <div className="flex items-center gap-2 border-b border-white/5 px-3 py-2">
-            <div className="flex flex-1 items-center gap-2 rounded-md border border-white/10 bg-black/40 px-2.5 py-1.5 font-mono text-[11px] text-zinc-400">
+        <div className="min-w-0 bg-[#0b0d0f]">
+          <div className="flex items-center gap-2 border-b border-white/5 px-2.5 py-2 sm:px-3">
+            <div className="flex min-w-0 flex-1 items-center gap-2 rounded-md border border-white/10 bg-black/40 px-2 py-1 font-mono text-[10px] text-zinc-400 sm:px-2.5 sm:py-1.5 sm:text-[11px]">
               <SearchIcon />
-              <span className="text-zinc-500">{"{player::%uuid%::*}"}</span>
+              <span className="truncate text-zinc-500">{"{player::%uuid%::*}"}</span>
               <span className="caret -ml-1 text-emerald-300" />
             </div>
-            <span className="rounded-md border border-white/10 bg-white/[0.03] px-2 py-1 font-mono text-[10px] text-zinc-400">
+            <span className="hidden rounded-md border border-white/10 bg-white/[0.03] px-2 py-1 font-mono text-[10px] text-zinc-400 sm:inline">
               ⌘K
             </span>
           </div>
 
-          <div className="divide-y divide-white/5 font-mono text-[12px]">
+          <div className="divide-y divide-white/5 font-mono text-[11px] sm:text-[12px]">
             <VarRow
               i={0}
               path="player::Noctis_::coins"
@@ -100,11 +103,11 @@ export function ViewerMock() {
             />
           </div>
 
-          <div className="flex items-center justify-between border-t border-white/5 bg-[#0a0c0e]/60 px-3 py-2 font-mono text-[10px] text-zinc-500">
-            <div className="flex items-center gap-3">
+          <div className="flex items-center justify-between border-t border-white/5 bg-[#0a0c0e]/60 px-2.5 py-2 font-mono text-[10px] text-zinc-500 sm:px-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <span>9,978 vars</span>
-              <span className="text-zinc-700">·</span>
-              <span>14ms query</span>
+              <span className="hidden text-zinc-700 sm:inline">·</span>
+              <span className="hidden sm:inline">14ms query</span>
               <span className="text-zinc-700">·</span>
               <span className="text-emerald-300">+22 just now</span>
             </div>
@@ -188,7 +191,7 @@ function VarRow({
 
   return (
     <div
-      className="row-in grid grid-cols-[1fr_88px_140px_28px] items-center gap-3 px-3 py-2 hover:bg-white/[0.02]"
+      className="row-in grid grid-cols-[1fr_96px_20px] items-center gap-2 px-2.5 py-1.5 hover:bg-white/[0.02] sm:grid-cols-[1fr_88px_140px_28px] sm:gap-3 sm:px-3 sm:py-2"
       style={{ animationDelay: `${0.08 * (i + 1)}s` }}
     >
       <div className="truncate text-zinc-300">
@@ -197,19 +200,19 @@ function VarRow({
         </span>
         <span className="text-zinc-100">{path.split("::").slice(-1)}</span>
       </div>
-      <div>
+      <div className="hidden sm:block">
         <span className="rounded border border-white/5 bg-white/[0.03] px-1.5 py-0.5 text-[10px] text-zinc-400">
           {type}
         </span>
       </div>
-      <div className="relative h-5 overflow-hidden tabular-nums">
-        <span className="cycle-a absolute inset-0 text-zinc-200">{valueA}</span>
-        <span className="cycle-b absolute inset-0 text-zinc-200">{valueB}</span>
-        <span className="cycle-c absolute inset-0 text-emerald-200">
+      <div className="relative h-4 overflow-hidden tabular-nums sm:h-5">
+        <span className="cycle-a absolute inset-0 truncate text-zinc-200">{valueA}</span>
+        <span className="cycle-b absolute inset-0 truncate text-zinc-200">{valueB}</span>
+        <span className="cycle-c absolute inset-0 truncate text-emerald-200">
           {valueC}
         </span>
       </div>
-      <div className={`text-right text-[11px] ${trendColor}`}>{trendGlyph}</div>
+      <div className={`text-right text-[10px] sm:text-[11px] ${trendColor}`}>{trendGlyph}</div>
     </div>
   );
 }

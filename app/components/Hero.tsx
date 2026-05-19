@@ -28,11 +28,11 @@ export function Hero({downloadUrl}: HeroProps) {
     };
 
     return (
-        <section className="relative mx-auto w-full max-w-6xl px-6 pt-16 pb-20 sm:pt-24 sm:pb-28">
-            <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_1.25fr] lg:gap-16">
+        <section className="relative mx-auto w-full max-w-6xl px-4 pt-20 pb-14 sm:px-6 sm:pt-24 sm:pb-28">
+            <div className="grid items-center gap-10 sm:gap-12 lg:grid-cols-[1.05fr_1.25fr] lg:gap-16">
                 <div className="relative">
 
-                    <h1 className="text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-zinc-50 sm:text-5xl lg:text-6xl">
+                    <h1 className="text-balance text-[2rem] font-semibold leading-[1.08] tracking-tight text-zinc-50 sm:text-5xl lg:text-6xl">
                         Finally see what&rsquo;s inside your{" "}
                         <span className="relative whitespace-nowrap">
               <span
@@ -47,7 +47,7 @@ export function Hero({downloadUrl}: HeroProps) {
                         .
                     </h1>
 
-                    <p className="mt-5 max-w-md text-[15px] leading-relaxed text-zinc-400">
+                    <p className="mt-4 max-w-md text-[14px] leading-relaxed text-zinc-400 sm:mt-5 sm:text-[15px]">
                         A real-time web dashboard for every variable on your server.
                         Browse nested lists, search 10M+ entries instantly, and edit values
                         without touching{" "}
@@ -57,7 +57,7 @@ export function Hero({downloadUrl}: HeroProps) {
                         .
                     </p>
 
-                    <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+                    <div className="mt-6 flex flex-col gap-2.5 sm:mt-7 sm:flex-row sm:items-center sm:gap-3">
                         <a
                             id="install"
                             href={downloadUrl}
@@ -73,13 +73,15 @@ export function Hero({downloadUrl}: HeroProps) {
                             transition={spring}
                             className={[
                                 "relative inline-flex h-11 items-center overflow-hidden rounded-lg border bg-white/[0.02]",
+                                demoState === "input"
+                                    ? "w-full sm:w-[320px]"
+                                    : "w-auto",
                                 demoState === "sent"
                                     ? "border-emerald-400/40 bg-emerald-400/10"
                                     : demoState === "input"
                                         ? "border-white/15 focus-within:border-white/30"
                                         : "border-white/10 hover:border-white/20",
                             ].join(" ")}
-                            style={{ width: demoState === "input" ? 320 : "auto" }}
                         >
                             <AnimatePresence mode="wait" initial={false}>
                                 {demoState === "idle" && (
@@ -117,7 +119,7 @@ export function Hero({downloadUrl}: HeroProps) {
                                                 if (e.key === "Escape") setDemoState("idle");
                                             }}
                                             placeholder="you@server.gg"
-                                            className="h-full flex-1 bg-transparent text-sm text-zinc-100 placeholder:text-zinc-500 outline-none"
+                                            className="h-full flex-1 bg-transparent text-sm text-zinc-100 placeholder:text-zinc-500 outline-none w-full"
                                         />
                                         <button
                                             type="submit"
@@ -156,7 +158,7 @@ export function Hero({downloadUrl}: HeroProps) {
                         </motion.div>
                     </div>
 
-                    <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[12px] text-zinc-500">
+                    <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-[11.5px] text-zinc-500 sm:mt-6 sm:gap-x-5 sm:text-[12px]">
             <span className="inline-flex items-center gap-1.5">
               <CheckIcon/> No DB required
             </span>
