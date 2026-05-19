@@ -12,6 +12,25 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+    --animate-marquee: marquee var(--duration) infinite linear;
+    --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+
+    @keyframes marquee {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(calc(-100% - var(--gap)));
+        }
+    }
+    @keyframes marquee-vertical {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(calc(-100% - var(--gap)));
+        }
+    }
 }
 
 html,
@@ -23,8 +42,8 @@ body {
 /* Subtle blueprint grid */
 .bg-grid {
   background-image:
-    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+          linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+          linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
   background-size: 44px 44px;
   background-position: -1px -1px;
 }
@@ -32,16 +51,16 @@ body {
 /* Hero radial glow */
 .bg-glow {
   background:
-    radial-gradient(
-      ellipse 60% 50% at 50% 0%,
-      rgba(52, 211, 153, 0.18) 0%,
-      transparent 70%
-    ),
-    radial-gradient(
-      ellipse 50% 40% at 80% 30%,
-      rgba(56, 189, 248, 0.08) 0%,
-      transparent 60%
-    );
+          radial-gradient(
+                  ellipse 60% 50% at 50% 0%,
+                  rgba(52, 211, 153, 0.18) 0%,
+                  transparent 70%
+          ),
+          radial-gradient(
+                  ellipse 50% 40% at 80% 30%,
+                  rgba(56, 189, 248, 0.08) 0%,
+                  transparent 60%
+          );
 }
 
 /* Blinking caret */
@@ -66,14 +85,6 @@ body {
   animation: rowIn 0.45s ease-out forwards;
 }
 
-/* Marquee for live ticker (pure CSS) */
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.marquee-track {
-  animation: marquee 38s linear infinite;
-}
 
 /* Animated value: cycles through three values via opacity */
 @keyframes cycleA { 0%,28%{opacity:1} 33%,100%{opacity:0} }

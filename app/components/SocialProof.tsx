@@ -21,7 +21,7 @@ export function SocialProof() {
   ];
   return (
     <section
-      id="proof"
+      id="servers"
       className="relative mx-auto w-full max-w-6xl px-6 py-24"
     >
       <div className="mb-12">

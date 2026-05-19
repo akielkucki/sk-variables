@@ -1,6 +1,6 @@
 export function HowItWorks() {
   return (
-    <section id="how" className="relative mx-auto w-full max-w-6xl px-6 py-24">
+    <section id="how-it-works" className="relative mx-auto w-full max-w-6xl px-6 py-24">
       <div className="grid items-start gap-12 lg:grid-cols-[1fr_1.1fr]">
         <div className="lg:sticky lg:top-24">
           <div className="font-mono text-[11px] uppercase tracking-wider text-emerald-300/80">
