@@ -4,7 +4,6 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
-import {fetchDownloadUrl} from "@/lib/server-actions";
 
 const spring = { type: "spring" as const, stiffness: 400, damping: 40, mass: 1 };
 
